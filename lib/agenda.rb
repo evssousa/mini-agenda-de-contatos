@@ -1,8 +1,49 @@
 require 'csv'
 
-def add
-    CSV.open("../data/contatos.csv", "w") do |csv|
-        csv << [nome, telefone, email]
-end
+module Agenda
+    FILE_PATH = "data/contatos.csv"
 
-add()
+    # Adicionar contato
+    def self.add(nome, telefone, email)
+        CSV.open(FILE_PATH, "a") do |csv|
+            csv << [nome, telefone, email]
+        end
+        puts "Contato adicionado: #{nome}"
+    end
+
+    # Listar contatos
+    def self.list
+        if File.exist?(FILE_PATH) # verifica se o arquivo existe
+            contatos = CSV.read(FILE_PATH) # se existir, o arquivo é guardado na variável
+
+            if contatos.empty? # verifica se o arquivo está vazio
+                puts "Nenhum contato encontrado."
+            else
+                puts "Lista de Contatos"
+                contatos.each_with_index do |contato, i|
+                    puts "#{i+1}. #{contato[0]} | #{contato[1]} | #{contato[2]}"
+                end
+            end
+
+        else
+            puts "Arquivo de contatos não existe ainda."
+        end
+    end
+
+    # Buscar contato
+    def self.search(nome)
+        if File.exist?(FILE_PATH)
+            contatos = CSV.read(FILE_PATH)
+            resultado = contatos.find { |c| c[0].downcase == nome.downcase }
+
+            if resultado
+                puts "Contato encontrado: #{resultado[0]} | #{resultado[1]} | #{resultado[2]}"
+            else
+                puts "Nenhum contato encontrado com o nome #{nome}"
+            end
+
+        else
+            puts "Arquivo de contatos não existe ainda."
+        end
+    end
+end

@@ -1,11 +1,11 @@
-# 📌 Mini Agenda de Contatos (Versão Simplificada)
+# 📌 Mini Agenda de Contatos
 
 ## 🎯 Objetivo
 Criar uma aplicação em Ruby que permita **adicionar e listar contatos** usando um arquivo CSV, executada totalmente no terminal.
 
 ---
 
-## 📝 Escopo Simplificado
+## 📝 Escopo
 - **Adicionar contato** (nome, telefone, email).  
 - **Listar contatos**.  
 - **Buscar contato** (opcional, se quiser dar um passo além).  
@@ -27,7 +27,7 @@ mini_agenda/
 
 ---
 
-## 📋 Backlog (bem enxuto)
+## 📋 Backlog
 
 1. **Adicionar contato**  
    - Comando: `ruby main.rb add "Maria Silva" "85999999999" "maria@email.com"`  
@@ -43,7 +43,7 @@ mini_agenda/
 
 ---
 
-## 📅 Cronograma (3 dias)
+## 📅 Cronograma
 
 | Dia | Tarefa | Entregável |
 |-----|--------|------------|
