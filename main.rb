@@ -10,14 +10,17 @@ when "add"
   else
     puts "Modo de usar: ruby main.rb add \"Nome\" \"Telefone\" \"Email\""
   end
+
 when "list"
   Agenda.list
+
 when "search"
   if args.size == 1
     Agenda.search(args[0])
   else
     puts "Modo de usar: ruby main.rb search \"Nome\""
   end
+  
 else
   puts "Comando inválido. Use: add, list ou search."
 end
