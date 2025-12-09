@@ -1,5 +1,6 @@
 require_relative "msg_inicial"
 require_relative "limpar_tela"
+require_relative "agenda"
 
 def adicionar
   limpar_tela()

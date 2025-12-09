@@ -1,5 +1,4 @@
 require_relative "lib/msg_inicial"
-require_relative "lib/agenda"
 require_relative "lib/limpar_tela"
 require_relative "lib/adicionar"
 
