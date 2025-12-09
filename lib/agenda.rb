@@ -1,4 +1,5 @@
-require 'csv'
+require_relative "limpar_tela"
+require "csv"
 
 module Agenda
     FILE_PATH = "data/contatos.csv"
@@ -8,7 +9,7 @@ module Agenda
         CSV.open(FILE_PATH, "a") do |csv|
             csv << [nome, telefone, email]
         end
-        puts "Contato adicionado: #{nome}"
+        puts "\nContato adicionado com sucesso!"
     end
 
     # Listar contatos
