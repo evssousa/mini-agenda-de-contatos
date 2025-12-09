@@ -5,7 +5,7 @@ module Agenda
     FILE_PATH = "data/contatos.csv"
 
     # Adicionar contato
-    def self.add(nome, telefone, email)
+    def self.adicionar(nome, telefone, email)
         CSV.open(FILE_PATH, "a") do |csv|
             csv << [nome, telefone, email]
         end
@@ -13,7 +13,7 @@ module Agenda
     end
 
     # Listar contatos
-    def self.list
+    def self.listar
         if File.exist?(FILE_PATH) # verifica se o arquivo existe
             contatos = CSV.read(FILE_PATH) # se existir, o arquivo é guardado na variável
 
@@ -32,7 +32,7 @@ module Agenda
     end
 
     # Buscar contato
-    def self.search(nome)
+    def self.procurar(nome)
         if File.exist?(FILE_PATH)
             contatos = CSV.read(FILE_PATH)
             resultado = contatos.find { |c| c[0].downcase == nome.downcase }

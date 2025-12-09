@@ -1,49 +1,33 @@
 require_relative "lib/msg_inicial"
 require_relative "lib/agenda"
 require_relative "lib/limpar_tela"
+require_relative "lib/adicionar"
 
 # comando = ARGV[0]
 # args = ARGV[1..]
 
-msg_inicial()
-puts "\nPara verificar sua agenda, selecione uma das opções:"
-puts "
-1. Adicionar
-2. Listar
-3. Procurar
-\n"
+opcao = 0
 
-print "Opção: "
-opcao = gets.chomp.to_i
-
-case opcao
-when 1
+while opcao != 4
   limpar_tela()
   msg_inicial()
-  puts "\nAdicione o novo usuário:"
-
-  print "Nome: "
-  nome = gets.chomp
-
-  print "Telefone: "
-  telefone = gets.chomp
-
-  print "Email: "
-  email = gets.chomp
-
-  puts "\nConfirme os dados:
-  Nome: #{nome}
-  Telefone: #{telefone}
-  E-mail: #{email}"
-  print "\nAs informações estão corretas [s/n]? "
-  confirmacao = gets.chomp
-
-  if confirmacao == "s"
-    limpar_tela()
-    msg_inicial()
-    Agenda.add(nome, telefone, email)
+  puts "\nPara verificar sua agenda, selecione uma das opções:"
+  puts "
+  1. Adicionar
+  2. Listar
+  3. Procurar
+  4. Finalizar Programa
+  \n"
+  
+  print "Opção: "
+  opcao = gets.chomp.to_i
+  
+  case opcao
+  when 1
+    adicionar()
   end
 end
+
 
 # case comando
 # when "add"
