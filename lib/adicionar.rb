@@ -32,7 +32,7 @@ def adicionar
     if confirmacao == "s"
       limpar_tela()
       msg_inicial()
-      Agenda.add(nome, telefone, email)
+      Agenda.adicionar(nome, telefone, email)
       sleep(2)
     end
   end

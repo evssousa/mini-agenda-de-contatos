@@ -27,8 +27,11 @@ while opcao != "4"
     listar()
   when "3"
     procurar()
+  when "4"
+    puts "Programa finalizado."
   else
-    puts "Comando inválido."
+    puts "Comando inválido. Tente novamente."
+    sleep(1)
   end
 end
 

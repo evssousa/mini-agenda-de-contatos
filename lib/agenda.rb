@@ -27,7 +27,7 @@ module Agenda
             end
 
         else
-            puts "Arquivo de contatos não existe ainda."
+            puts "\nArquivo de contatos não existe ainda."
         end
     end
 
@@ -38,13 +38,13 @@ module Agenda
             resultado = contatos.find { |c| c[0].downcase == nome.downcase }
 
             if resultado
-                puts "Contato encontrado: #{resultado[0]} | #{resultado[1]} | #{resultado[2]}"
+                puts "\nContato encontrado: \nNome: #{resultado[0]} | Telefone: #{resultado[1]} | Email: #{resultado[2]}"
             else
-                puts "Nenhum contato encontrado com o nome #{nome}"
+                puts "\nNenhum contato encontrado com o nome #{nome}"
             end
 
         else
-            puts "Arquivo de contatos não existe ainda."
+            puts "\nArquivo de contatos não existe ainda."
         end
     end
 end
