@@ -18,11 +18,11 @@ module Agenda
             contatos = CSV.read(FILE_PATH) # se existir, o arquivo é guardado na variável
 
             if contatos.empty? # verifica se o arquivo está vazio
-                puts "Nenhum contato encontrado."
+                puts "\nNenhum contato encontrado."
             else
-                puts "Lista de Contatos"
+                puts "\nLista de Contatos"
                 contatos.each_with_index do |contato, i|
-                    puts "#{i+1}. #{contato[0]} | #{contato[1]} | #{contato[2]}"
+                    puts "#{i+1}. Nome: #{contato[0]} | Telefone: #{contato[1]} | Email: #{contato[2]}"
                 end
             end
 

@@ -1,13 +1,12 @@
 require_relative "lib/msg_inicial"
 require_relative "lib/limpar_tela"
 require_relative "lib/adicionar"
+require_relative "lib/listar"
+require_relative "lib/procurar"
 
-# comando = ARGV[0]
-# args = ARGV[1..]
+opcao = ""
 
-opcao = 0
-
-while opcao != 4
+while opcao != "4"
   limpar_tela()
   msg_inicial()
   puts "\nPara verificar sua agenda, selecione uma das opções:"
@@ -19,14 +18,22 @@ while opcao != 4
   \n"
   
   print "Opção: "
-  opcao = gets.chomp.to_i
+  opcao = gets.chomp
   
   case opcao
-  when 1
+  when "1"
     adicionar()
+  when "2"
+    listar()
+  when "3"
+    procurar()
+  else
+    puts "Comando inválido."
   end
 end
 
+# comando = ARGV[0]
+# args = ARGV[1..]
 
 # case comando
 # when "add"
